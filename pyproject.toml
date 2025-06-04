@@ -1,0 +1,20 @@
+[project]
+name = "playlist-into-spotify"
+version = "0.1.0"
+description = "Import playlists from various formats into your Spotify library"
+authors = [{name = "James ORourke", email = "james@cloudadvantage.com.au"}]
+requires-python = ">=3.12"
+dependencies = [
+    "spotipy>=2.22.1",
+]
+
+[project.scripts]
+playlist-to-spotify = "playlist_to_spotify:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# Add this section to tell hatchling which files to include
+[tool.hatch.build.targets.wheel]
+packages = ["playlist_to_spotify.py"]
